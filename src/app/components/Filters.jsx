@@ -1,5 +1,4 @@
-import React from 'react';
-import Filter from './Filter';
+//import Filter from './Filter';
 
 function Filters() {
 	return (

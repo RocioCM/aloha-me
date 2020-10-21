@@ -1,4 +1,4 @@
-import hotelsData from './mocks/data';
+//import hotelsData from './mocks/data';
 
 // Service for Getting Hotels Data.
 class getHotels {
@@ -8,4 +8,4 @@ class getHotels {
 	}
 }
 
-module.exports = ReservationDetailService;
+export default ReservationDetailService;

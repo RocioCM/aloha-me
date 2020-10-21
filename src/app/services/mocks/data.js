@@ -236,4 +236,4 @@ const hotelsData = [
 	},
 ];
 
-module.exports = hotelsData;
+export default hotelsData;
