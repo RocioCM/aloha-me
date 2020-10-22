@@ -305,19 +305,17 @@ function HotelCard(props) {
 		price,
 	} = props;
 
-	const createPriceIcons = () => {
-		let priceIcons = [];
+	const getPriceIconsClasses = () => {
+		let iconsClasses = [];
 		for (let i = 0; i < 4; i++) {
-			priceIcons.push(
-				<i
-					class={`fas fa-dollar-sign ${
-						i < price && 'transparentize'
-					}`}
-				></i>
+			iconsClasses.push(
+				`fas fa-dollar-sign ${i >= price && 'transparentize'}`
 			);
 		}
-		return priceIcons;
+		return iconsClasses;
 	};
+
+	const priceIcons = getPriceIconsClasses();
 
 	return (
 		<article className='hotel-card' key={slug}>
@@ -335,8 +333,10 @@ function HotelCard(props) {
 						<i className='fas fa-bed single-icon'></i>
 						{rooms} Habitaciones
 					</h3>
-					<span className='single-icon transparentize'>
-						<b className='fas'>$</b>$$$${/*createPriceIcons()*/}
+					<span className='single-icon'>
+						{priceIcons.map((classes) => (
+							<i className={classes}></i>
+						))}
 					</span>
 				</div>
 			</div>
@@ -359,6 +359,7 @@ function Filters() {
 				type='text'
 				name='arrival-date'
 				placeholder='Fecha de llegada'
+				className='fas fa-bed single-icon'
 			/>
 			<input
 				type='text'
