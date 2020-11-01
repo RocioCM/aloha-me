@@ -36,14 +36,14 @@ function FiltersBar(props) {
 			],
 		},
 		{
-			name: 'hotel-size',
+			name: 'size',
 			type: 'select',
 			iconClass: 'fas fa-bed',
 			options: [
 				{value: '', name: 'Cualquier tamaño'},
-				{value: '1', name: 'Hotel pequeño'},
-				{value: '2', name: 'Hotel mediano'},
-				{value: '3', name: 'Hotel grande'},
+				{value: 'pequeño', name: 'Hotel pequeño'},
+				{value: 'mediano', name: 'Hotel mediano'},
+				{value: 'grande', name: 'Hotel grande'},
 			],
 		},
 	];

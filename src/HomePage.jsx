@@ -34,7 +34,7 @@ class HomePage extends React.Component {
 		this.setState(
 			{[e.target.name]: e.target.value !== '' ? e.target.value : null},
 			() => {
-				/* console.log(this.state) ///Should I here launch specific filters-state-change functions? */
+				console.log(this.state); ///Should I here launch specific filters-state-change functions? */
 			}
 		);
 	};
@@ -73,34 +73,34 @@ class HomePage extends React.Component {
 }
 
 function HeaderBar(props) {
-	const {selectedFrom, selectedTo, country, price, size} = props;
+	const {arrivalDate, leaveDate, country, price, size} = props;
 	return (
 		<header className='header-bar'>
 			<h1>Hoteles</h1>
 			<p>
-				{!selectedFrom && (
+				{arrivalDate && (
 					<span>
 						Desde <b>{'hoy'} </b>
 					</span>
 				)}
-				{!selectedTo && (
+				{leaveDate && (
 					<span>
 						hasta <b>{'mañana'} </b> <br />
 					</span>
 				)}
-				{!country && (
+				{country && (
 					<span>
-						en <b>{'este lindo lugar'} </b>
+						en <b>{country} </b>
 					</span>
 				)}
-				{!price && (
+				{price && (
 					<span>
-						con costo <b>{'$$'} </b>
+						con costo <b>{'$$$$$$'} </b>
 					</span>
 				)}
-				{!size && (
+				{size && (
 					<span>
-						de tamaño <b>{'grande'} </b>
+						de tamaño <b>{size} </b>
 					</span>
 				)}
 			</p>
