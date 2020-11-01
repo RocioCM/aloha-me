@@ -1,15 +1,10 @@
-// import HeaderBar from './app/components/Help';
-// import Filters from './app/components/Filters';
-// import Gallery from './app/components/Gallery';
+// import HomePage from './HomePage';
+// import '../services/mocks/data.js';
 
-class App extends React.Component {
-	state = {
-		hotelsData: [],
-	};
-
-	componentDidMount() {
-		//Esto de hotelsData le debería hacer un fetch en el index y pasarselo de prop al app, así no tiene que cazarlo cada vez que re-renderiza.
-		//A cada card le tengo que poner una key.
+function App() {
+	//const getHotels = require('../services/mocks/data.js');
+	const getHotels = () => {
+		//Esto de hotelsData le debería hacer un require al data.js.
 		const today = new Date();
 		const hotelsData = [
 			{
@@ -247,134 +242,11 @@ class App extends React.Component {
 				price: 1,
 			},
 		];
-		this.setState({hotelsData});
-	}
-
-	handleFilter = (event) => {
-		this.setState({[event.target.name]: [event.target.value]});
+		return hotelsData;
 	};
 
-	render() {
-		return (
-			<React.Fragment>
-				<HeaderBar />
-				<Filters />
-				{this.state.hotelsData.length !== 0 ? (
-					<Gallery hotels={this.state.hotelsData} />
-				) : (
-					<EmptyGallery />
-				)}
-			</React.Fragment>
-		);
-	}
-}
-
-function HeaderBar() {
-	return (
-		<header className='header-bar'>
-			<h1>Hoteles</h1>
-			<p>Holi, acá van tus filtros aplicados :D</p>
-		</header>
-	);
-}
-
-function Gallery(props) {
-	return (
-		<section className='gallery'>
-			{props.hotels.map((hotel) => (
-				<HotelCard {...hotel} />
-			))}
-		</section>
-	);
-}
-
-function EmptyGallery() {
-	return <h2>Ouh, nu hay hoteles para tus filtros</h2>;
-}
-function HotelCard(props) {
-	const {
-		slug,
-		name,
-		photo,
-		description,
-		availabilityFrom,
-		availabilityTo,
-		rooms,
-		city,
-		country,
-		price,
-	} = props;
-
-	const getPriceIconsClasses = () => {
-		let iconsClasses = [];
-		for (let i = 0; i < 4; i++) {
-			iconsClasses.push(
-				`fas fa-dollar-sign ${i >= price && 'transparentize'}`
-			);
-		}
-		return iconsClasses;
-	};
-
-	const priceIcons = getPriceIconsClasses();
-
-	return (
-		<article className='hotel-card' key={slug}>
-			<img src={photo} alt={slug} />
-			<div className='hotel-info'>
-				<h2>{name}</h2>
-				<p>{description}</p>
-				<div className='icons-info-ctn'>
-					<h3>
-						<i className='fas fa-map-marker single-icon'></i>
-						{[city, country].join(', ')}
-					</h3>
-					<br />
-					<h3>
-						<i className='fas fa-bed single-icon'></i>
-						{rooms} Habitaciones
-					</h3>
-					<span className='single-icon'>
-						{priceIcons.map((classes) => (
-							<i className={classes}></i>
-						))}
-					</span>
-				</div>
-			</div>
-			<button className='reserve-btn'>Reservar</button>
-		</article>
-	);
-}
-
-function Filters() {
-	//<i className="fas fa-sign-in-alt"></i>
-	//<i className="fas fa-sign-out-alt"></i>
-	//<i className="fas fa-globe"></i>
-	//<i className="fas fa-dollar-sign"></i>
-	//<i className='fas fa-bed'></i>
-
-	return (
-		<form className='filters-ctn'>
-			{/*Poner acá 5 filtros. con algún map.*/}
-			<input
-				type='text'
-				name='arrival-date'
-				placeholder='Fecha de llegada'
-				className='fas fa-bed single-icon'
-			/>
-			<input
-				type='text'
-				name='leave-date'
-				placeholder='Fecha de salida'
-			/>
-			<input type='text' name='country' placeholder='Todos los países' />
-			<input type='text' name='price' placeholder='Cualquier precio' />
-			<input
-				type='text'
-				name='hotel-size'
-				placeholder='Cualquier tamaño'
-			/>
-		</form>
-	);
+	const hotels = getHotels();
+	return <HomePage hotels={hotels} />;
 }
 
 export default App;
