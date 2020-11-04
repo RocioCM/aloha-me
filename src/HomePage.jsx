@@ -74,18 +74,36 @@ class HomePage extends React.Component {
 
 function HeaderBar(props) {
 	const {arrivalDate, leaveDate, country, price, size} = props;
+
+	const formatDate = (date) => {
+		const dateParams = date.split('-');
+		return new Date(
+			dateParams[0],
+			dateParams[1] - 1,
+			dateParams[2]
+		).toLocaleDateString();
+	};
+
+	const formatPrice = (price) => {
+		let strPrice = '';
+		for (let i = 0; i < price; i++) {
+			strPrice += '$';
+		}
+		return strPrice;
+	};
+
 	return (
 		<header className='header-bar'>
 			<h1>Hoteles</h1>
 			<p>
 				{arrivalDate && (
 					<span>
-						Desde <b>{'hoy'} </b>
+						Desde el <b>{formatDate(arrivalDate)} </b>
 					</span>
 				)}
 				{leaveDate && (
 					<span>
-						hasta <b>{'mañana'} </b> <br />
+						hasta el <b>{formatDate(leaveDate)} </b> <br />
 					</span>
 				)}
 				{country && (
@@ -95,7 +113,7 @@ function HeaderBar(props) {
 				)}
 				{price && (
 					<span>
-						con costo <b>{'$$$$$$'} </b>
+						con costo <b>{formatPrice(price)} </b> <br />
 					</span>
 				)}
 				{size && (
