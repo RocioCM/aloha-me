@@ -1,7 +1,8 @@
 function HotelCard(props) {
+	const maxPrice = 4;
 	const getPriceIconsClasses = () => {
 		let iconsClasses = [];
-		for (let i = 0; i < 4; i++) {
+		for (let i = 0; i < maxPrice; i++) {
 			iconsClasses.push(
 				`fas fa-dollar-sign ${i >= price ? 'transparentize' : ''}`
 			);

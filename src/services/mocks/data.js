@@ -66,19 +66,6 @@ const hotelsData = [
 		price: 2,
 	},
 	{
-		slug: 'azur-real',
-		name: 'Azur Real Hotel',
-		photo: './images/azur-real.jpg',
-		description:
-			'La exclusividad rodeada de historia. Azur Real Hotel Boutique está ubicado en el corazón de la zona comercial y el centro histórico de Córdoba, dentro de uno de los principales circuitos culturales y turísticos de la ciudad.',
-		availabilityFrom: today.valueOf() + 1296000000, // 15 days
-		availabilityTo: today.valueOf() + 2592000000, // 30 days
-		rooms: 16,
-		city: 'Córdoba',
-		country: 'Argentina',
-		price: 1,
-	},
-	{
 		slug: 'rincon-del-socorro',
 		name: 'Rincón del Socorro',
 		photo: './images/rincon-del-socorro.jpg',
@@ -90,6 +77,19 @@ const hotelsData = [
 		city: 'Corrientes',
 		country: 'Argentina',
 		price: 2,
+	},
+	{
+		slug: 'azur-real',
+		name: 'Azur Real Hotel',
+		photo: './images/azur-real.jpg',
+		description:
+			'La exclusividad rodeada de historia. Azur Real Hotel Boutique está ubicado en el corazón de la zona comercial y el centro histórico de Córdoba, dentro de uno de los principales circuitos culturales y turísticos de la ciudad.',
+		availabilityFrom: today.valueOf() + 1296000000, // 15 days
+		availabilityTo: today.valueOf() + 2592000000, // 30 days
+		rooms: 16,
+		city: 'Córdoba',
+		country: 'Argentina',
+		price: 1,
 	},
 	{
 		slug: 'luma-casa-de-montana',
@@ -131,6 +131,32 @@ const hotelsData = [
 		price: 3,
 	},
 	{
+		slug: 'casa-higueras',
+		name: 'Casa Higueras',
+		photo: './images/casa-higueras.jpg',
+		description:
+			'Ubicada en el corazón del Cerro Alegre, frente a la imponente bahía de Valparaíso, se encuentra Casa Higueras, el primer hotel boutique y de diseño del puerto.',
+		availabilityFrom: today.valueOf() + 432000000, // 5 days
+		availabilityTo: today.valueOf() + 1296000000, // 15 days
+		rooms: 20,
+		city: 'Valparaíso',
+		country: 'Chile',
+		price: 4,
+	},
+	{
+		slug: 'alto-atacama',
+		name: 'Alto Atacama',
+		photo: './images/alto-atacama.jpg',
+		description:
+			'Alto Atacama Desert Lodge & Spa es un distinguido refugio ubicado a los pies del Pukará de Quitor en el imponente desierto de Atacama al norte de Chile.',
+		availabilityFrom: today.valueOf(),
+		availabilityTo: today.valueOf() + 864000000, // 10 days
+		rooms: 42,
+		city: 'San Pedro de Atacama',
+		country: 'Chile',
+		price: 4,
+	},
+	{
 		slug: 'uxua-casa',
 		name: 'UXUA Casa Hotel & Spa',
 		photo: './images/uxua-casa.jpg',
@@ -146,7 +172,7 @@ const hotelsData = [
 	{
 		slug: 'ponta-dos-ganchos',
 		name: 'Ponta dos Ganchos',
-		photo: './images/uxua-casa.jpg',
+		photo: './images/ponta-dos-ganchos.jpg',
 		description:
 			'Ubicado a pasos de San Pablo, Río de Janeiro, e incluso Buenos Aires, en una península privada y rodeado por un pintoresco pueblo de pescadores, se encuentra Ponta dos Ganchos, uno de los resorts de playa más exclusivos del sur de Brasil.',
 		availabilityFrom: today.valueOf() + 432000000, // 5 days
@@ -154,19 +180,6 @@ const hotelsData = [
 		rooms: 25,
 		city: 'Santa Catarina',
 		country: 'Brasil',
-		price: 4,
-	},
-	{
-		slug: 'alto-atacama',
-		name: 'Alto Atacama',
-		photo: './images/alto-atacama.jpg',
-		description:
-			'Alto Atacama Desert Lodge & Spa es un distinguido refugio ubicado a los pies del Pukará de Quitor en el imponente desierto de Atacama al norte de Chile.',
-		availabilityFrom: today.valueOf(),
-		availabilityTo: today.valueOf() + 864000000, // 10 days
-		rooms: 42,
-		city: 'San Pedro de Atacama',
-		country: 'Chile',
 		price: 4,
 	},
 	{
@@ -205,19 +218,6 @@ const hotelsData = [
 		availabilityTo: today.valueOf() + 1728000000, // 20 days
 		rooms: 22,
 		city: 'Millahue',
-		country: 'Chile',
-		price: 4,
-	},
-	{
-		slug: 'casa-higueras',
-		name: 'Casa Higueras',
-		photo: './images/casa-higueras.jpg',
-		description:
-			'Ubicada en el corazón del Cerro Alegre, frente a la imponente bahía de Valparaíso, se encuentra Casa Higueras, el primer hotel boutique y de diseño del puerto.',
-		availabilityFrom: today.valueOf() + 432000000, // 5 days
-		availabilityTo: today.valueOf() + 1296000000, // 15 days
-		rooms: 20,
-		city: 'Valparaíso',
 		country: 'Chile',
 		price: 4,
 	},
