@@ -55,39 +55,42 @@ h1 {
 .hotel-info {
 	padding: 0 1rem;
 }
-.hotel-info h3 {
+.icons-info-ctn {
+	margin-bottom: 1rem;
+}
+.icons-info-ctn > h3 {
 	width: max-content;
 	display: inline-block;
-	height: 1.5rem;
+	height: 2rem;
 	margin: 0.5rem 0;
+	padding-right: 0.5rem;
 	font: 400 1rem / 1.5rem Roboto;
+	background-color: rgb(230, 230, 230);
+	border-radius: 0.3rem;
+	overflow: hidden;
 }
-.hotel-info span {
-	margin: 0.5rem 2rem;
+.icons-info-ctn > span {
+	margin: 0.5rem 1.5rem;
 	display: inline-block;
+	border-radius: 0.3rem;
+	overflow: hidden;
 }
-.hotel-info .single-icon {
+.icons-info-ctn .blue-icon-ctn {
 	background-color: dodgerblue;
 	color: white;
-	height: 2rem;
-	border-radius: 0.3rem;
-	display: inline-block;
 	margin-right: 0.5rem;
 	padding: 0 0.7rem;
 }
-.hotel-info .fas {
+.icons-info-ctn .fas {
 	color: white;
 	line-height: 2rem;
 	text-align: center;
 }
-.hotel-info i.fa-dollar-sign {
+.icons-info-ctn i.fa-dollar-sign {
 	padding: 0 2px;
 }
-.hotel-info .transparentize {
+.icons-info-ctn .transparentize {
 	color: rgba(255, 255, 255, 0.3);
-}
-.icons-info-ctn {
-	margin-bottom: 1rem;
 }
 
 .reserve-btn {

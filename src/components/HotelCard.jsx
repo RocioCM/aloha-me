@@ -21,15 +21,15 @@ function HotelCard(props) {
 				<p>{description}</p>
 				<div className='icons-info-ctn'>
 					<h3>
-						<i className='fas fa-map-marker single-icon'></i>
+						<i className='fas fa-map-marker blue-icon-ctn'></i>
 						{[city, country].join(', ')}
 					</h3>
 					<br />
 					<h3>
-						<i className='fas fa-bed single-icon'></i>
+						<i className='fas fa-bed blue-icon-ctn'></i>
 						{rooms} Habitaciones
 					</h3>
-					<span className='single-icon'>
+					<span className='blue-icon-ctn'>
 						{priceIcons.map((classes, i) => (
 							<i className={classes} key={i}></i>
 						))}
