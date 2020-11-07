@@ -1,25 +1,35 @@
 //import React from 'react';
 
 function Filter(props) {
+	const {
+		iconClass,
+		type,
+		name,
+		handleChange,
+		options,
+		placeHolder,
+		minDate,
+	} = props;
 	return (
 		<article className='filter'>
-			<i className={props.iconClass}></i>
+			<i className={iconClass}></i>
 			{props.type === 'date' ? (
 				<input
 					className='filter-input'
-					type={props.type}
-					name={props.name}
-					min={props.minDate}
-					onChange={props.handleChange}
+					type={type}
+					name={name}
+					placeHolder={placeHolder}
+					min={minDate}
+					onChange={handleChange}
 				/>
 			) : (
 				<React.Fragment>
 					<select
 						className='filter-input'
-						name={props.name}
-						onChange={props.handleChange}
+						name={name}
+						onChange={handleChange}
 					>
-						{props.options.map((option) => (
+						{options.map((option) => (
 							<option key={option.name} value={option.value}>
 								{option.name}
 							</option>

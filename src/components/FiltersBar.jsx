@@ -8,12 +8,14 @@ function FiltersBar(props) {
 		{
 			name: 'arrivalDate',
 			type: 'date',
+			placeHolder: 'Fecha de llegada',
 			minDate: today,
 			iconClass: 'fas fa-sign-in-alt',
 		},
 		{
 			name: 'leaveDate',
 			type: 'date',
+			placeHolder: 'Fecha de salida',
 			minDate: today,
 			iconClass: 'fas fa-sign-out-alt',
 		},
