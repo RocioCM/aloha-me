@@ -10,6 +10,7 @@ function Filter(props) {
 		placeHolder,
 		minDate,
 	} = props;
+
 	return (
 		<article className='filter'>
 			<i className={iconClass}></i>
@@ -18,7 +19,7 @@ function Filter(props) {
 					className='filter-input'
 					type={type}
 					name={name}
-					placeHolder={placeHolder}
+					placeholder={placeHolder}
 					min={minDate}
 					onChange={handleChange}
 				/>

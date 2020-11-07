@@ -130,8 +130,8 @@ class HomePage extends React.Component {
 			}
 		});
 		countries = countries.map((country) => {
-			return {value: country, name: country};
-		}); //Option format.
+			return {value: country, name: country}; //Option format.
+		});
 		countries.unshift({value: '', name: 'Todos los países'}); //default option.
 		return countries;
 	}

@@ -4,8 +4,7 @@
 function App() {
 	//const getHotels = require('../services/mocks/data.js');
 	const getHotels = () => {
-		//Esto de hotelsData le debería hacer un require al data.js.
-		const today = new Date();
+		const today = new Date().setHours(0, 0, 0, 0);
 		const hotelsData = [
 			{
 				slug: 'la-bamba-de-areco',
