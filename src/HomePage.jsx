@@ -78,13 +78,13 @@ class HomePage extends React.Component {
 				return hotels.filter(
 					(hotel) =>
 						hotel[property] <= date &&
-						hotel['availabilityTo'] > date
+						hotel['availabilityTo'] >= date
 				);
 			case 'availabilityTo':
 				return hotels.filter(
 					(hotel) =>
 						hotel[property] >= date &&
-						hotel['availabilityFrom'] < date
+						hotel['availabilityFrom'] <= date
 				);
 			default:
 				return hotels;
