@@ -33,27 +33,30 @@ class HomePage extends React.Component {
 	runFilters = (hotels) => {
 		//Runs the five different filters on the full hotels list.
 
-		let filteredHotels = this.filterByDate(
-			hotels,
+		let filteredHotels = hotels;
+		const {arrivalDate, leaveDate, country, price, size} = this.state;
+
+		if (arrivalDate && leaveDate && arrivalDate > leaveDate) {
+			return [];
+		}
+
+		filteredHotels = this.filterByDate(
+			filteredHotels,
 			'availabilityFrom',
-			this.state.arrivalDate
+			arrivalDate
 		);
 		filteredHotels = this.filterByDate(
 			filteredHotels,
 			'availabilityTo',
-			this.state.leaveDate
+			leaveDate
 		);
 		filteredHotels = this.filterByPropValue(
 			filteredHotels,
 			'country',
-			this.state.country
+			country
 		);
-		filteredHotels = this.filterByPropValue(
-			filteredHotels,
-			'price',
-			this.state.price
-		);
-		filteredHotels = this.filterBySize(filteredHotels, this.state.size);
+		filteredHotels = this.filterByPropValue(filteredHotels, 'price', price);
+		filteredHotels = this.filterBySize(filteredHotels, size);
 		return filteredHotels;
 	};
 
